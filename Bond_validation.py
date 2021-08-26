@@ -43,7 +43,7 @@ class BondValidationSpider(scrapy.Spider):
         for bond_no in read_excel():
             if bond_no in prize_list:
                 yield {
-                    'Bond': re.search("(?:Rs.\.?)\s*(\d+(?:[.,]\d+)*)", response.url).group(0),
+                    'Bond': re.search(r"(?:Rs.\.?)\s*(\d+(?:[.,]\d+)*)", response.url).group(0),
                     'Bond #': bond_no,
                     'DRAW Date': date(int(response.url.split('/')[-1].split('.')[0].split('-')[2][0:4]),
                                       int(response.url.split('/')[-1].split('.')[0].split('-')[1]),
