@@ -1,3 +1,4 @@
+from sqlite3.dbapi2 import connect
 import scrapy
 import pandas as pd
 from urllib.request import urlopen
